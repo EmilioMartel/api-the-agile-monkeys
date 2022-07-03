@@ -2,13 +2,18 @@ import express from 'express';
 import morgan from 'morgan';
 import pkg from '../package.json';
 
+
+import authRoutes from "./routes/auth.routes";
+
 const app = express();
 
 app.set('pkg', pkg);
 
 // middleware
 app.use(morgan('dev'));
+app.use(express.json());
 
+// routes
 app.get("/", (req, res) => {
     res.json({
         author: app.get('pkg').author,
@@ -16,5 +21,7 @@ app.get("/", (req, res) => {
         version: app.get('pkg').version
     });
 })
+
+app.use("/api/auth", authRoutes);
 
 export default app;
