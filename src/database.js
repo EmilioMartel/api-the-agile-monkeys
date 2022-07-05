@@ -1,5 +1,7 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+import config from "./config";
 
-mongoose.connect('mongodb://localhost/api-db')
-    .then(() => console.log('Connected to MongoDB...'))
-    .catch(error => console.log('Error:', error.message));
+mongoose
+  .connect(config.MONGODB_URI)
+  .then((db) => console.log(`DB is connected`))
+  .catch((err) => console.log(err));
