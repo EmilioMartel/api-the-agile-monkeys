@@ -4,9 +4,13 @@ const router = Router();
 import * as customerCtrl from "../controllers/customers.controller";
 import { authJwt } from "../middlewares";
 
-router.get("/", customerCtrl.getCustomers);
+router.get("/",
+  [authJwt.verifyToken, authJwt.isUser, authJwt.isAdmin], 
+  customerCtrl.getCustomers);
 
-router.get("/:customerId", customerCtrl.getCustomerById);
+router.get("/:customerId",
+  [authJwt.verifyToken, authJwt.isUser, authJwt.isAdmin],
+  customerCtrl.getCustomerById);
 
 router.post(
   "/create",
