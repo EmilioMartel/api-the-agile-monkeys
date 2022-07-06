@@ -22,7 +22,7 @@ export const createCustomer = async (req, res) => {
 export const getCustomerById = async (req, res) => {
   const { customerId } = req.params;
 
-  const customer = await Product.findById(customerId);
+  const customer = await Customer.findById(customerId);
   res.status(200).json(customer);
 };
 
@@ -32,8 +32,9 @@ export const getCustomers = async (req, res) => {
 };
 
 export const updateCustomerById = async (req, res) => {
+  console.log(req.body);
   const updatedCustomer = await Customer.findByIdAndUpdate(
-    req.params.CustomertId,
+    req.params.customerId,
     req.body,
     {
       new: true,
@@ -45,7 +46,7 @@ export const updateCustomerById = async (req, res) => {
 export const deleteCustomerById = async (req, res) => {
   const { customerId } = req.params;
 
-  await Product.findByIdAndDelete(customerId);
+  await Customer.findByIdAndDelete(customerId);
 
   // code 200 is ok too
   res.status(204).json();
