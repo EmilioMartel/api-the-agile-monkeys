@@ -14,4 +14,9 @@ router.post(
   usersCtrl.createUser
 );
 
+router.get(
+   "/",
+    [authJwt.verifyToken, authJwt.isAdmin],
+)
+
 export default router;
