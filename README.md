@@ -52,19 +52,26 @@ En nuestra raiz del proyecto deberemos también tener creado una carpeta build d
  npm start
  npm run build
 ```
-3º La organización jerarquica de nuestra API se establece de la siguiente manera:
+### La organización jerarquica de nuestra API se establece de la siguiente manera:
  * build/
  * postman/
  * src/
-    * controllers/
-    * libs/
-    * middlewares/
-    * models/
-    * routes/
-    * app.js
-    * config.js
-    * database.js
-    * index.js
-* .babelrc
+    * controllers/ 
+    * libs/ 
+    * middlewares/ 
+    * models/ 
+    * routes/ 
+    * app.js // Configuración de todos los servicios de la API
+    * config.js // Contiene las variables globales de la API
+    * database.js // Configuración y arranque de la base de datos
+    * index.js // Indicamos dónde se aloja el servidor
+* .babelrc // Configuración de Babel
 * package.json
 * README.md
+
+### Contenido de las carpetas:
+- ##### controllers: Manejarán el CRUD de la API
+- ##### libs: Crearán solo una vez al comienzo del arranque los roles y el admin de la API
+- ##### middlewares: Gestiona la verificacion y autenticación los tokens de los usuarios
+- ##### models: Tipo de datos que almacenarios en nuestra base de datos
+- ##### routes: Diversas rutas de acceso de nuestra API
