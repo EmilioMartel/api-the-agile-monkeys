@@ -53,68 +53,18 @@ En nuestra raiz del proyecto deberemos también tener creado una carpeta build d
  npm run build
 ```
 3º La organización jerarquica de nuestra API se establece de la siguiente manera:
-+---build
-|   |   app.js
-|   |   config.js
-|   |   database.js
-|   |   index.js
-|   |
-|   +---controllers
-|   |       auth.controller.js
-|   |       customers.controller.js
-|   |       user.controller.js
-|   |
-|   +---libs
-|   |       initialSetup.js
-|   |
-|   +---middlewares
-|   |       authJwt.js
-|   |       index.js
-|   |       verifySignup.js
-|   |
-|   +---models
-|   |       Customer.js
-|   |       Role.js
-|   |       User.js
-|   |
-|   \---routes
-|           auth.routes.js
-|           customers.routes.js
-|           user.routes.js
-|
-+---postman
-|       Api The Agile Monkeys.postman_collection.json
-|
-\---src
-    |   app.js
-    |   config.js
-    |   database.js
-    |   index.js
-    |
-    +---controllers
-    |       auth.controller.js
-    |       customers.controller.js
-    |       user.controller.js
-    |
-    +---libs
-    |       initialSetup.js
-    |
-    +---middlewares
-    |       authJwt.js
-    |       index.js
-    |       verifySignup.js
-    |
-    +---models
-    |       Customer.js
-    |       Role.js
-    |       User.js
-    |
-    \---routes
-            auth.routes.js
-            customers.routes.js
-            user.routes.js
-|   .babelrc
-|   .gitignore
-|   package-lock.json
-|   package.json
-|   README.md
+ * build/
+ * postman/
+ * src/
+    * controllers/
+    * libs/
+    * middlewares/
+    * models/
+    * routes/
+    * app.js
+    * config.js
+    * database.js
+    * index.js
+* .babelrc
+* package.json
+* README.md
