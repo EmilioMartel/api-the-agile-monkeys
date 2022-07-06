@@ -1,13 +1,13 @@
 import User from "../models/User";
 import Role from "../models/Role";
+import jwt from "jsonwebtoken";
+import config from "../config";
 
 export const createUser = async (req, res) => {
   try {
     const { username, email, password, roles } = req.body;
 
     const rolesFound = await Role.find({ name: { $in: roles } });
-
-    console.log(rolesFound);
 
     // creating a new User
     const user = new User({
@@ -20,14 +20,19 @@ export const createUser = async (req, res) => {
     // encrypting password
     user.password = await User.encryptPassword(user.password);
 
+    // Sets who created the user
+    let token = req.headers["x-access-token"];
+    if (!token) return res.status(403).json({ message: "No token provided" });
+    const decoded = jwt.verify(token, config.SECRET);
+    const userLogged = await User.findById(decoded.id, { password: 0 });
+    user.createdBy = userLogged._id;
+    user.updatedBy = userLogged._id;
+    
     // saving the new user
-    const savedUser = await user.save();
+    const savedUser = await user.save();  
 
     return res.status(200).json({
-      _id: savedUser._id,
-      username: savedUser.username,
-      email: savedUser.email,
-      roles: savedUser.roles,
+      message: "User created successfully",
     });
   } catch (error) {
     console.error(error);
@@ -49,6 +54,14 @@ export const getUsers = async (req, res) => {
 };
 
 export const updateUserById = async (req, res) => {
+
+  // Sets who updated the user
+  let token = req.headers["x-access-token"];
+  if (!token) return res.status(403).json({ message: "No token provided" });
+  const decoded = jwt.verify(token, config.SECRET);
+  const userLogged = await User.findById(decoded.id, { password: 0 });
+  req.body.updatedBy = userLogged._id;
+
   const updatedUser = await User.findByIdAndUpdate(
     req.params.userId,
     req.body,

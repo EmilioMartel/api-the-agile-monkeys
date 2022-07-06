@@ -12,7 +12,6 @@ export const createRoles = async () => {
             new Role({ name: 'user' }).save()
         ])
 
-        console.log(values);
     } catch (error) {
         console.error(error);
     }

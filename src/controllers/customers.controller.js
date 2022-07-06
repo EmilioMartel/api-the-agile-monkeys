@@ -1,4 +1,6 @@
 import Customer from "../models/Customer";
+import jwt from "jsonwebtoken";
+import config from "../config";
 
 export const createCustomer = async (req, res) => {
   const { name, surname, imgURL } = req.body;
@@ -9,6 +11,14 @@ export const createCustomer = async (req, res) => {
       surname,
       imgURL
     });
+
+    // Sets who created the customer
+    let token = req.headers["x-access-token"];
+    if (!token) return res.status(403).json({ message: "No token provided" });
+    const decoded = jwt.verify(token, config.SECRET);
+    const userLogged = await User.findById(decoded.id, { password: 0 });
+    newCustomer.createdBy = userLogged._id;
+    newCustomer.updatedBy = userLogged._id;
 
     const customerSaved = await newCustomer.save();
 
@@ -32,7 +42,14 @@ export const getCustomers = async (req, res) => {
 };
 
 export const updateCustomerById = async (req, res) => {
-  console.log(req.body);
+  
+  // Sets who updated the customer
+  let token = req.headers["x-access-token"];
+  if (!token) return res.status(403).json({ message: "No token provided" });
+  const decoded = jwt.verify(token, config.SECRET);
+  const userLogged = await User.findById(decoded.id, { password: 0 });
+  req.body.updatedBy = userLogged._id;
+
   const updatedCustomer = await Customer.findByIdAndUpdate(
     req.params.customerId,
     req.body,

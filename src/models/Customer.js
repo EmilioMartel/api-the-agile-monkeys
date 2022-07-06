@@ -5,6 +5,8 @@ const customerSchema = new Schema(
     name: String,
     surname: String,
     imgURL: String,
+    createdBy: String,
+    updatedBy: String,
   },
   {
     timestamps: true,
