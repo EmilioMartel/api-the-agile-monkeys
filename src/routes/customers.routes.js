@@ -9,13 +9,13 @@ router.get("/", customerCtrl.getCustomers);
 router.get("/:customerId", customerCtrl.getCustomerById);
 
 router.post(
-  "/",
+  "/create",
   [authJwt.verifyToken, authJwt.isUser, authJwt.isAdmin],
   customerCtrl.createCustomer
 );
 
 router.put(
-  "/:customerId",
+  "/update/:customerId",
   [authJwt.verifyToken, authJwt.isUser, authJwt.isAdmin],
   customerCtrl.updateCustomerById
 );
