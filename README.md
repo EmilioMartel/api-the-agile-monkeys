@@ -36,7 +36,7 @@ EIn this backend project I have used the following dependencies:
     ]
 }
 ```
-####### This file will indicate which preset we will use to translate what we do
+##### This file will indicate which preset we will use to translate what we do
 
 2º In our package.json file we will set the following scripts:
 ```
