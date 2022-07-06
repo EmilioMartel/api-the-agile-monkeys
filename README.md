@@ -15,14 +15,14 @@ EIn this backend project I have used the following dependencies:
 ```
 
 #### For production mode:
-- [bcryptjs]()
-- [cors]()
-- [dotenv]()
-- [express]()
-- [helmet]()
-- [jsonwebtoken]()
-- [mongoose]()
-- [morgan]()
+- [bcryptjs](https://www.npmjs.com/package/bcryptjs) To get a great level of security (encrypt critical data)
+- [cors](https://www.npmjs.com/package/cors) ** Can be used to enable CORS with various options.
+- [dotenv](https://www.npmjs.com/package/dotenv) ** Dotenv is a zero-dependency module that loads environment variables
+- [express](https://www.npmjs.com/package/express) ** To create a server 
+- [helmet](https://www.npmjs.com/package/helmet) ** Helmet helps you secure your Express apps by setting various HTTP headers
+- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) ** Token used to send data between applications or services
+- [mongoose](https://www.npmjs.com/package/mongoose) ** MongoDB object modeling tool designed to work in an asynchronous environment
+- [morgan](https://www.npmjs.com/package/morgan) ** HTTP request logger middleware for node.js
 
 ***
 ### Once we have all our dependencies installed we will start with the configuration of the project.
