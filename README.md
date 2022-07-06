@@ -61,11 +61,11 @@ In our project root we must also have created a build folder where all our compi
     * middlewares/ 
     * models/ 
     * routes/ 
-    * app.js // Configuration of all API services
-    * config.js // Contains the global variables of the API
-    * database.js // Database setup and startup
-    * index.js // We indicate where the server is hosted
-* .babelrc // Babel Configuration
+    * app.js ** Configuration of all API services
+    * config.js ** Contains the global variables of the API
+    * database.js ** Database setup and startup
+    * index.js ** We indicate where the server is hosted
+* .babelrc ** Babel Configuration
 * package.json
 * README.md
 
