@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "3b4b9dd0-832a-4712-9694-37dcfb96446f",
+		"name": "Api The Agile Monkeys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "/api/auth/signup user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user10\",\r\n    \"email\": \"user10@theagilemonkeys.com\",\r\n    \"password\": \"password\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/auth/signup admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin2\",\r\n    \"email\": \"admin2@theagilemonkeys.com\",\r\n    \"password\": \"password\",\r\n    \"roles\": [\"admin\",\"user\"]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/auth/signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"prueba26@theagilemonkeys.com\",\r\n    \"password\":\"password\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzU4Y2IwZDY2OWRhZTBlZDdjYTM2ZSIsImlhdCI6MTY1NzExMzc5OCwiZXhwIjoxNjU3MjAwMTk4fQ.pLokLw2M5c1mLBf7gxdXBhjxZghCcnyqjlQ-MHwd2Yw",
+								"description": "admin token",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user\",\r\n    \"email\": \"user@theagilemonkeys.com\",\r\n    \"password\": \"password\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/users/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzU4Y2IwZDY2OWRhZTBlZDdjYTM2ZSIsImlhdCI6MTY1NzExMzc5OCwiZXhwIjoxNjU3MjAwMTk4fQ.pLokLw2M5c1mLBf7gxdXBhjxZghCcnyqjlQ-MHwd2Yw",
+								"description": "admin token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzU4Y2IwZDY2OWRhZTBlZDdjYTM2ZSIsImlhdCI6MTY1NzExMzc5OCwiZXhwIjoxNjU3MjAwMTk4fQ.pLokLw2M5c1mLBf7gxdXBhjxZghCcnyqjlQ-MHwd2Yw",
+								"description": "admin token",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/users/62c58d1feb403fd494a0aab3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users",
+								"62c58d1feb403fd494a0aab3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User by id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzU4ZWZkYjA0NzczYTdjZTM4MTE4MSIsImlhdCI6MTY1NzExNDM2NSwiZXhwIjoxNjU3MjAwNzY1fQ.-E2EU7slZ4FkS954fIZaN9MWPNoS5wJPJWF3YJol5BM",
+								"description": "admin token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user el mejor\",\r\n    \"email\": \"el_gran_user@theagilemonkeys.com\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/users/update/62c58d1feb403fd494a0aab3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users",
+								"update",
+								"62c58d1feb403fd494a0aab3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzU2OGMyM2RkNzlmYzg1ZDQyMzdlYiIsImlhdCI6MTY1NzEwNDY1MCwiZXhwIjoxNjU3MTkxMDUwfQ.EyIaZUwf3MbtXkYBrQloCITwW9xZFVNSw80m18WGP14",
+								"description": "admin token",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzU2YzNlNTUxODJkOGZjNGQ2N2Q2YiIsImlhdCI6MTY1NzEwNTQ3MCwiZXhwIjoxNjU3MTkxODcwfQ.pHnJFYIljQcPKXezx3_FvGEPdJT6BTKtaOADsQIZZZc",
+								"description": "user token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/users/62c56c2a55182d8fc4d67d66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users",
+								"62c56c2a55182d8fc4d67d66"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzU1YjdmMTFkMjRhODcxMjVlYjA5YSIsImlhdCI6MTY1NzEwMTE4MywiZXhwIjoxNjU3MTg3NTgzfQ.8oQua3v76Mjy5m6h4yyUSghWMKO6L68GWH6CPyYNEmw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Emilio\",\n    \"surname\": \"Martel Díaz\",\n    \"imgURL\": \"https://www.product.img/on/server/29164.jpg\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/customers/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"customers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzU1YjdmMTFkMjRhODcxMjVlYjA5YSIsImlhdCI6MTY1NzEwMTE4MywiZXhwIjoxNjU3MTg3NTgzfQ.8oQua3v76Mjy5m6h4yyUSghWMKO6L68GWH6CPyYNEmw",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customer By id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzU1YjdmMTFkMjRhODcxMjVlYjA5YSIsImlhdCI6MTY1NzEwMTE4MywiZXhwIjoxNjU3MTg3NTgzfQ.8oQua3v76Mjy5m6h4yyUSghWMKO6L68GWH6CPyYNEmw",
+								"description": "user token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/customers/62c55d3f6d169942d1cfa678",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"customers",
+								"62c55d3f6d169942d1cfa678"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer by id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzU1YjdmMTFkMjRhODcxMjVlYjA5YSIsImlhdCI6MTY1NzEwMTE4MywiZXhwIjoxNjU3MTg3NTgzfQ.8oQua3v76Mjy5m6h4yyUSghWMKO6L68GWH6CPyYNEmw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Emilio el Hacker\",\r\n    \"surname\": \"Martel Díaz\",\r\n    \"imgURL\": \"https://upload.wikimedia.org/wikipedia/commons/a/a9/Tom_Hanks_TIFF_2019.jpg\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/customers/update/62c55d3f6d169942d1cfa678",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"customers",
+								"update",
+								"62c55d3f6d169942d1cfa678"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer By id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzU1YjdmMTFkMjRhODcxMjVlYjA5YSIsImlhdCI6MTY1NzEwMTE4MywiZXhwIjoxNjU3MTg3NTgzfQ.8oQua3v76Mjy5m6h4yyUSghWMKO6L68GWH6CPyYNEmw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/customers/62c55d3f6d169942d1cfa678",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"customers",
+								"62c55d3f6d169942d1cfa678"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

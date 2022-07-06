@@ -62,7 +62,6 @@ export const updateCustomerById = async (req, res) => {
 
 export const deleteCustomerById = async (req, res) => {
   const { customerId } = req.params;
-
   await Customer.findByIdAndDelete(customerId);
 
   // code 200 is ok too
